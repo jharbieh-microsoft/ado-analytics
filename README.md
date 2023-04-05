@@ -8,9 +8,14 @@
 5. Azure DevOps Node.js SDK
 6. Azure DevOps OData REST API
 
-## How to run the script
+## How to run the Python script
 ```
 python main.py
+```
+
+## How to compile the main.cs file
+```
+."C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\Roslyn\csc.exe" .\main.cs
 ```
 
 ## How to install the azure devops python sdk
