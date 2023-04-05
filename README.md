@@ -43,3 +43,6 @@ python -m pip install dotenv
 [Azure DevOps Analytics Quick Reference](https://learn.microsoft.com/en-us/azure/devops/report/extend-analytics/quick-ref?view=azure-devops)
 
 [Grant Permissions to use Azure DevOps Analytics](https://learn.microsoft.com/en-us/azure/devops/report/powerbi/analytics-security?view=azure-devops&tabs=preview-page)
+
+## Credits
+Dot ENV. As I searched for a pacakge to read the .env file, I found this article and thought it was a good idea to use the approach. Simple. No need to install any package. Also, makes complete sense. [Dusted](https://dusted.codes/dotenv-in-dotnet)
