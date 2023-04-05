@@ -24,6 +24,8 @@ work_item_type = os.getenv('AZURE_DEVOPS_WORK_ITEM_TYPE')
 work_item_state = os.getenv('AZURE_DEVOPS_WORK_ITEM_STATE')
 work_item_area_path = os.getenv('AZURE_DEVOPS_WORK_ITEM_AREA_PATH')
 work_item_iteration_path = os.getenv('AZURE_DEVOPS_WORK_ITEM_ITERATION_PATH')
+analytics_url = os.getenv('AZURE_DEVOPS_ANALYTICS_URL')
+organization = os.getenv('AZURE_DEVOPS_ORGANIZATION')
 
 def emit(msg, *args):
     try:
@@ -48,6 +50,39 @@ def print_work_item(work_item):
             )
     except:
         print("there was an error somewhere")
+
+def query_azure_devops_org_project_workitems_odata():
+    # Create an OData endpoint request
+    request = requests.get(
+        analytics_url + "/" + organization + "/" + project_name + "_odata/v3.0-preview/WorkItems",
+        auth=("","{0}".format(personal_access_token)),
+        params={
+            "$select": "WorkItemId,Title,WorkItemType,State,CreatedDate",
+            "$filter": "startswith(Area/AreaPath,'" + work_item_area_path + "')",
+            "$orderby": "CreatedDate desc",
+            "$top": "10"
+        }
+    )
+
+    # print(request.url)
+
+    # Parse the response
+    try:
+        response = request.json()
+        print(response)
+    except ValueError:
+        print("No JSON object could be decoded")
+        return
+
+    # Get the list of work items
+    work_items = response.get("workItems", [])
+    print(work_items)
+
+    for work_item in work_items:
+        try:
+                print_work_item(work_item)
+        except Exception as e:
+                print("Error in print_work_item: {}".format(e))
 
 def query_azure_devops_org_project_workitems(type=work_item_type, state=work_item_state, project=project_name, team=team_name, iteration=work_item_iteration_path, tags=None, assigned_to=None, top=1000, skip=0, orderby='State,Changed Date', fields='System.Id,System.Title,System.State,System.AssignedTo,System.Tags,System.WorkItemType,System.AreaPath,System.IterationPath,System.ChangedDate,System.CreatedDate,System.CreatedBy,System.ChangedBy'):
     from azure.devops.connection import Connection
@@ -114,3 +149,4 @@ def query_azure_devops_org_project_workitems(type=work_item_type, state=work_ite
 
 if __name__ == "__main__":
     query_azure_devops_org_project_workitems()
+    query_azure_devops_org_project_workitems_odata()
