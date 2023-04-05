@@ -16,6 +16,10 @@ python main.py
 ## How to install the azure devops python sdk
 [Azure DevOps Python SDK](https://docs.microsoft.com/en-us/azure/devops/integrate/quickstarts/client-library?view=azure-devops&tabs=python)
 
+## Run OData Query
+1. Install the vscode-odata extension in VSCode
+2. Modify and run main.odata
+
 ## Run VSCode as Administrator
 ```
 python -m ensurepip
@@ -32,3 +36,5 @@ python -m pip install dotenv
 [Azure DevOps Work Item OData REST API](https://learn.microsoft.com/en-us/azure/devops/report/powerbi/odataquery-connect?view=azure-devops)
 
 [Azure DevOps Analytics Quick Reference](https://learn.microsoft.com/en-us/azure/devops/report/extend-analytics/quick-ref?view=azure-devops)
+
+[Grant Permissions to use Azure DevOps Analytics](https://learn.microsoft.com/en-us/azure/devops/report/powerbi/analytics-security?view=azure-devops&tabs=preview-page)

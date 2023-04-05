@@ -1,0 +1,5 @@
+https://analytics.dev.azure.com/{organization}/{project}/_odata/v3.0-preview/WorkItems?
+    $select=WorkItemId,Title,WorkItemType,State,CreatedDate
+    &$filter=startswith(Area/AreaPath,'{area path}')
+    &$orderby=CreatedDate desc
+    &$top=10
