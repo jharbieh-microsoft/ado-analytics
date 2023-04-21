@@ -52,5 +52,8 @@ python -m pip install dotenv
 
 [Management Reports in Azure DevOps (GitHub repo)](https://github.com/vinijmoura/Azure-DevOps)
 
+## Community Blogs
+[Vinicius Moura](https://vinijmoura.medium.com/)
+
 ## Credits
 Dot ENV. As I searched for a pacakge to read the .env file, I found this article and thought it was a good idea to use the approach. Simple. No need to install any package. Also, makes complete sense. [Dusted](https://dusted.codes/dotenv-in-dotnet)
