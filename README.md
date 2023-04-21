@@ -42,9 +42,15 @@ python -m pip install dotenv
 
 [Azure DevOps Analytics Quick Reference](https://learn.microsoft.com/en-us/azure/devops/report/extend-analytics/quick-ref?view=azure-devops)
 
+[Azure DevOps Analytics Data Model](https://learn.microsoft.com/en-us/azure/devops/report/extend-analytics/data-model-analytics-service?view=azure-devops)
+
 [Grant Permissions to use Azure DevOps Analytics](https://learn.microsoft.com/en-us/azure/devops/report/powerbi/analytics-security?view=azure-devops&tabs=preview-page)
 
 [Terraform Tutorial for Azure](https://developer.hashicorp.com/terraform/tutorials/azure-get-started/azure-build)
+
+[Management Reports in Azure DevOps (Video)](https://www.youtube.com/watch?v=gqUFAAByPfU&t=8s)
+
+[Management Reports in Azure DevOps (GitHub repo)](https://github.com/vinijmoura/Azure-DevOps)
 
 ## Credits
 Dot ENV. As I searched for a pacakge to read the .env file, I found this article and thought it was a good idea to use the approach. Simple. No need to install any package. Also, makes complete sense. [Dusted](https://dusted.codes/dotenv-in-dotnet)
